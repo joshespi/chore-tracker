@@ -50,15 +50,15 @@ switch ($action) {
             include 'views/login.php';
         }
         break;
-    case 'tasks':
-        $taskController->listTasks();
-        break;
-    case 'submit_time':
-        $timerController->submitTime();
-        break;
-    case 'approve_task':
-        $taskController->approveTask();
-        break;
+    // case 'tasks':
+    //     $taskController->listTasks();
+    //     break;
+    // case 'submit_time':
+    //     $timerController->submitTime();
+    //     break;
+    // case 'approve_task':
+    //     $taskController->approveTask();
+    //     break;
     case 'edit_user':
         if (!isset($_SESSION['user_id']) || $authController->getUserRole($_SESSION['user_id']) !== 'admin') {
             header('Location: index.php?view=login');

@@ -23,13 +23,13 @@ class LogController
         }
         return false;
     }
-    // public function getLogsByUserId($userId)
-    // {
-    //     // Make sure you have a PDO connection in this model, e.g., $this->pdo
-    //     $stmt = $this->pdo->prepare("SELECT * FROM logs WHERE user_id = ?");
-    //     $stmt->execute([$userId]);
-    //     return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-    // }
+    public function getLogsByUserId($userId)
+    {
+        // Make sure you have a PDO connection in this model, e.g., $this->pdo
+        $stmt = $this->pdo->prepare("SELECT * FROM logs WHERE user_id = ?");
+        $stmt->execute([$userId]);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
     public function getLogs($userId)
     {
         // Retrieve logs for the specified user

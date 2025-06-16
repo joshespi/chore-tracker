@@ -9,25 +9,12 @@ $title = 'Admin Dashboard';
 $header = 'Welcome, Admin!';
 $users = $authController->getAllUsers();
 
-// if ($action === 'user_list') {
-//     $users = $authController->getAllUsers();
-//     include 'views/user_list.php';
-// } elseif ($action === 'edit_user' && isset($_GET['id'])) {
-//     $user = $authController->getUserById($_GET['id']);
-//     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//         $authController->updateUser($_GET['id'], $_POST['username'], $_POST['role']);
-//         header('Location: index.php?view=user_list');
-//         exit;
-//     }
-//     include 'views/edit_user.php';
-// }
-
 ob_start();
 ?>
 <section>
     <h2>User Management</h2>
     <p>Here you can add, edit, or remove users.</p>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>Username</th>
@@ -49,7 +36,7 @@ ob_start();
 <section>
     <h2>Task Overview</h2>
     <p>View and manage all chores and assignments.</p>
-    <!-- Add task management features here -->
+    <!-- TODO: Add task management features here -->
 </section>
 
 <?php
