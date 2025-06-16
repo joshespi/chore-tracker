@@ -61,9 +61,27 @@ class AuthController
                 return $row['role'];
             }
         } catch (\Exception $e) {
-            // Optionally log the error
+            // TODO log the error
         }
         // Fallback to session variable
         return $_SESSION['role'] ?? null;
+    }
+    public function getAllUsers()
+    {
+        $stmt = $this->pdo->query("SELECT id, username, role FROM users");
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getUserById($userId)
+    {
+        $stmt = $this->pdo->prepare("SELECT id, username, role FROM users WHERE id = ?");
+        $stmt->execute([$userId]);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateUser($userId, $username, $role)
+    {
+        $stmt = $this->pdo->prepare("UPDATE users SET username = ?, role = ? WHERE id = ?");
+        return $stmt->execute([$username, $role, $userId]);
     }
 }

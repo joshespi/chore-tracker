@@ -59,7 +59,26 @@ switch ($action) {
     case 'approve_task':
         $taskController->approveTask();
         break;
+    case 'edit_user':
+        if (!isset($_SESSION['user_id']) || $authController->getUserRole($_SESSION['user_id']) !== 'admin') {
+            header('Location: index.php?view=login');
+            exit;
+        }
+        if (!isset($_GET['id'])) {
+            header('Location: index.php?view=dasboard');
+            exit;
+        }
+        $user = $authController->getUserById($_GET['id']);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $authController->updateUser($_GET['id'], $_POST['username'], $_POST['role']);
+            header('Location: index.php?view=dashboard');
+            exit;
+        }
+        include 'views/edit_user.php';
+        break;
     default:
         include 'views/login.php';
         break;
 }
+
+print_r($_SESSION); // Debugging line to check session contents
