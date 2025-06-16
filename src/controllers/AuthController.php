@@ -51,4 +51,19 @@ class AuthController
         header('Location: index.php?view=login');
         exit;
     }
+    public function getUserRole($userId)
+    {
+        try {
+            $stmt = $this->pdo->prepare("SELECT role FROM users WHERE id = ?");
+            $stmt->execute([$userId]);
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if ($row && isset($row['role'])) {
+                return $row['role'];
+            }
+        } catch (\Exception $e) {
+            // Optionally log the error
+        }
+        // Fallback to session variable
+        return $_SESSION['role'] ?? null;
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['user_id']) || ($_SESSION['role'] !== 'kid')) {
+if (!isset($_SESSION['user_id']) && ($authController->getUserRole($_SESSION['user_id'] === 'kid'))) {
     header('Location: index.php?view=login');
     exit;
 }
