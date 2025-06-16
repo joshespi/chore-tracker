@@ -39,7 +39,6 @@ switch ($action) {
         $authController->logout();
         break;
     case 'dashboard':
-        print_r($_SESSION);
         $role = $_SESSION['role'] ?? '';
         if ($role === 'kid') {
             include 'views/child_dashboard.php';
