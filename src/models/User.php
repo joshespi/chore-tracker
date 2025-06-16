@@ -7,7 +7,7 @@ class User
     private $id;
     private $username;
     private $password;
-    private $role; // 'kid' or 'adult'
+    private $role;
     private $earnedTime;
     private $earnedMoney;
 
