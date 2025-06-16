@@ -18,6 +18,12 @@ ob_start();
     <section>
         <h2>Create a New Task</h2>
         <!-- TODO: create a form to add a new task -->
+        <h2>Manage Family Members</h2>
+        <!-- TODO: manage family members, add/remove family members -->
+        <h2>Approve/confirm Tasks</h2>
+        <!-- TODO: approve or confirm tasks submitted by family members -->
+        <h2>View Task Logs</h2>
+        <!-- TODO: display logs of changes from the users in the family -->
 
         <h2>Earned Time/Money Overview</h2>
         <p>Total Earned: <?php echo $totalEarned; ?></p>

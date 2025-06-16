@@ -33,11 +33,6 @@ ob_start();
         <?php endforeach; ?>
     </table>
 </section>
-<section>
-    <h2>Task Overview</h2>
-    <p>View and manage all chores and assignments.</p>
-    <!-- TODO: Add task management features here -->
-</section>
 
 <?php
 $content = ob_get_clean();

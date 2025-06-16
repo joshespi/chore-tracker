@@ -18,7 +18,7 @@
             ?>
             <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin'): ?>
                 <a href="index.php?view=users">Manage Users</a> |
-                <a href="index.php?view=tasks">Manage Tasks</a> |
+
             <?php endif ?>
 
             <a href="index.php?view=logout">Logout</a>
