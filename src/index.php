@@ -63,3 +63,4 @@ switch ($action) {
         include 'views/login.php';
         break;
 }
+test
