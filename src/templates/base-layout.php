@@ -12,12 +12,12 @@
             <a href="index.php?view=dashboard">Dashboard</a> |
             <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'user'):
             ?>
-                <a href="index.php?view=managefamily">Manage Family</a> |
-                <a href="index.php?view=tasks">My Tasks</a> |
+                <!-- <a href="index.php?view=managefamily">Manage Family</a> | -->
+                <!-- <a href="index.php?view=tasks">My Tasks</a> | -->
             <?php endif
             ?>
             <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin'): ?>
-                <a href="index.php?view=users">Manage Users</a> |
+                <!-- <a href="index.php?view=users">Manage Users</a> | -->
 
             <?php endif ?>
 
