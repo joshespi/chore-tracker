@@ -10,17 +10,12 @@
         <h1><?= htmlspecialchars($header ?? 'Chore Tracker') ?></h1>
         <nav>
             <a href="index.php?view=dashboard">Dashboard</a> |
-            <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'user'):
+            <?php
+            if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'user') {
+            } elseif (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') {
+            } else if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'kid') {
+            }
             ?>
-                <!-- <a href="index.php?view=managefamily">Manage Family</a> | -->
-                <!-- <a href="index.php?view=tasks">My Tasks</a> | -->
-            <?php endif
-            ?>
-            <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin'): ?>
-                <!-- <a href="index.php?view=users">Manage Users</a> | -->
-
-            <?php endif ?>
-
             <a href="index.php?view=logout">Logout</a>
         </nav>
     </header>
